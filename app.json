@@ -8,5 +8,25 @@
     "navigationBarBackgroundColor": "#de4c56",
     "navigationBarTitleText": "语音口令",
     "navigationBarTextStyle":"white"
-  }
+  },
+  "tabBar":{
+    "color": "#999",
+    "selectedColor": "#DE4C56",
+    "borderStyle": "#fff",
+    "list":[
+      {
+        "pagePath": "pages/index/index",
+        "text": "发红包"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "广场"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的包"
+      }
+    ]
+  },
+  "debug":false
 }
