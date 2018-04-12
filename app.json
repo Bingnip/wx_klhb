@@ -16,15 +16,21 @@
     "list":[
       {
         "pagePath": "pages/index/index",
+        "iconPath": "images/red-packet.png",
+        "selectedIconPath": "images/red-packet-on.png",
         "text": "发红包"
       },
       {
         "pagePath": "pages/index/index",
+        "iconPath": "images/square.png",
+        "selectedIconPath": "images/square-on.png",
         "text": "广场"
       },
       {
         "pagePath": "pages/index/index",
-        "text": "我的包"
+        "text": "我的包",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me-on.png"
       }
     ]
   },
