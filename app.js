@@ -42,9 +42,7 @@ App({
                           city: infoUser.city,
                           code: codes,
                         }
-                        that.postLogin(url, data, function (res) {
-
-                        })
+                        that.postLogin(url, data);
                       }
                     })
                 }else{    //用户没有授权过
@@ -73,9 +71,7 @@ App({
                                       city : infoUser.city,
                                       code : codes,
                                     }
-                                    that.postLogin(url, data, function(res){
-
-                                    })
+                                    that.postLogin(url, data);
                               }
                          })
                       }
@@ -90,16 +86,29 @@ App({
       }
     });
   },
-  postLogin : function(url,data,callback){   //提交
+  postLogin: function (url, data, callback = function () { }){   //提交
+  var that=this;
     wx.request({  //发送请求
        url: url,
        data: data,
        method: 'POST',
        header: { "Content-Type" : "application/x-www-form-urlencoded" },
        success:function(res) {
-         
+         console.log(res);
+         if(res.data.code!=20000){  //状态码20000表示成功
+           wx.showToast({
+             title: res.data.msg,
+             icon:'loading',
+             mask:true,
+             duration:1500
+           })
+           return false;
+         }
+         if(res.data.token){   
+           that.globalData.token=res.data.token;  //返回的token写入globalData 
+         }
+         callback(res);
        }
      })
-
   }
 })

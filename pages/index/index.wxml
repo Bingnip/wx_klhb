@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="top">
+    <view>口令红包</view>
+    <view>语音红包</view>
+    <view>问答祝福</view>
+  </view>
+</view>
