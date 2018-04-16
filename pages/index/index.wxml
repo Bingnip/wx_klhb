@@ -1,7 +1,13 @@
 <view class="container">
   <view class="top">
-    <view>口令红包</view>
-    <view>语音红包</view>
-    <view>问答祝福</view>
+      <view class='mode {{mode == 0 ? "on":""}}' data-current="0" bindtap="switchNav">口令红包</view>
+      <view class='mode {{mode == 1 ? "on":""}}' data-current="1" bindtap="switchNav">语音红包</view>
+      <view class='mode {{mode == 2 ? "on":""}}' data-current="2" bindtap="switchNav">问答祝福</view>
   </view>
+  <view class='warning'><image src="/images/warning.png"></image>平台严打黄赌毒、恐怖暴力内容，一经发现永久查封</view>
+    <swiper current="{{mode}}" duration="{{duration}}" bindchange="swiperTab">
+        <swiper-item><view>第一屏</view></swiper-item>
+        <swiper-item><view>第二屏</view></swiper-item>
+        <swiper-item><view>第三屏</view></swiper-item>
+    </swiper>
 </view>

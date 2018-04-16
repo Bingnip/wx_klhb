@@ -94,7 +94,7 @@ App({
        method: 'POST',
        header: { "Content-Type" : "application/x-www-form-urlencoded" },
        success:function(res) {
-         console.log(res);
+        //  console.log(res);
          if(res.data.code!=20000){  //状态码20000表示成功
            wx.showToast({
              title: res.data.msg,

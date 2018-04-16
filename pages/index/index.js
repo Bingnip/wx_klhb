@@ -12,7 +12,9 @@ Page({
        minlq:'0.01' //最小领取金额
     },
     balance: '0.00',     //余额
-    imgsTP: [] 
+    imgsTP: [],  //平台广告
+    mode: 0,    //模式控制参数，首页三种红包参数
+    duration: 300, //切换效果时长
   },
 
   onShow: function() {   //获取登录信息
@@ -21,6 +23,21 @@ Page({
       mask: true
     })
     this.loop();
+  },
+
+  switchNav: function (e) { //模式切换
+    var that = this;
+    if(this.data.mode === e.currentTarget.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        mode: e.currentTarget.dataset.current
+      })
+    }
+  },
+
+  swiperTab: function(e) {  //
+      console.log(e);
   },
 
   loop: function() {   //请求登录信息
@@ -57,5 +74,7 @@ Page({
           })
 
       }
-  }
+  },
+
+ 
 })
