@@ -7,7 +7,7 @@
   <view class='warning'>
     <image src="/images/warning.png"></image>平台严打黄赌毒、恐怖暴力内容，一经发现永久查封
   </view>
-  <swiper current="{{mode}}" duration="{{duration}}" bindchange="swiperTab">
+  <swiper class="swiper" current="{{mode}}" duration="{{duration}}" bindchange="swiperTab">
       <swiper-item>
        <view class="clear-top"></view>
         <view class="box">
@@ -15,8 +15,16 @@
             <image class="userinfo-avatar" src="" backgroud-size="cover"></image>
           </view>
           <form bindsubmit="" >
+            <view class="txt"><text>设置口令</text><input placeholder='谢谢老板' value=""/></view> 
+            <view class='remark'>小伙伴们说对口令就能获得随机打赏</view>
+            <view class="txt"><text>赏金 (元)</text><input placeholder='填写金额' value=""/></view> 
+            <view class="txt"><text>数量 (个)</text><input placeholder='填写数量' value=""/></view> 
+            <text>发布广告</text><switch />
+            <text>分享到广场</text><switch />
+            <view class="btn-area">
+               <button form-type="submit">生成语音口令</button>
+            </view>
             
-            <button form-type="submit"></button>
           </form>
         </view>
       </swiper-item>
