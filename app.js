@@ -1,7 +1,7 @@
 var loginInfo={};
 
 App({
-  setConfig: { url: "https://www.challs.top/zhwmkl_envelop_klhb/zhwmkl_envelop" },   //全局常量
+  setConfig: { url: "https://www.challs.top/" },   //全局常量
   onLaunch: function(){   //onLaunch程序初始化执行
     this.userLogin();
   },
@@ -94,7 +94,7 @@ App({
        method: 'POST',
        header: { "Content-Type" : "application/x-www-form-urlencoded" },
        success:function(res) {
-        //  console.log(res);
+      
          if(res.data.code!=20000){  //状态码20000表示成功
            wx.showToast({
              title: res.data.msg,

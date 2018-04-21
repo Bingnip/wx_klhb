@@ -15,6 +15,7 @@ Page({
     imgsTP: [],  //平台广告
     mode: 0,    //模式控制参数，首页三种红包参数
     duration: 300, //切换效果时长
+    token:''  //token初始值空，每次获取新的token
   },
 
   onShow: function() {   //获取登录信息
@@ -54,6 +55,7 @@ Page({
       postData = { token : tok };
       app.postLogin(postUrl , postData , this.initial);
    
+
     }
   },
 
@@ -76,5 +78,6 @@ Page({
       }
   },
 
- 
+
+
 })
