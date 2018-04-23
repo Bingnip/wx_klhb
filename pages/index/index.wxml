@@ -12,24 +12,26 @@
        <view class="clear-top"></view>
         <view class="box">
           <view class="userInfo">
-            <image class="userinfo-avatar" src="" backgroud-size="cover"></image>
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" backgroud-size="cover"></image>
           </view>
-          <form bindsubmit="" >
-            <view class="txt"><text>设置口令</text><input bindinput="bindKLInput" maxlength='20' placeholder-style="color:#999" placeholder='谢谢老板' value="{{textCN}}"/></view> 
+          <form bindsubmit="formSubmit" report-submit='true' >
+            <view class="txt"><text>设置口令</text><input bindinput="bindKLInput" name="kl" maxlength='20' placeholder-style="color:#999" placeholder='谢谢老板' value="{{textCN}}"/></view> 
             <view class='remark'>小伙伴们说对口令就能获得随机打赏</view>
-            <view class="txt"><text>赏金 (元)</text><input placeholder='填写金额' type="digit" bindblur ="bindJEInput" placeholder-style="color:#999" maxlength='8' value=""/></view> 
-            <view class="txt"><text>数量 (个)</text><input placeholder='填写数量' value=""/></view>
+            <view class="txt"><text>赏金 (元)</text><input placeholder='填写金额' type="digit" name="sj" bindblur ="bindJEInput" placeholder-style="color:#999" maxlength='8' value="{{sum}}"/></view> 
+            <view class="txt"><text>数量 (个)</text><input placeholder='填写数量' type="number" name="sl" bindblur ="bindSLInput" placeholder-style="color:#999" maxlength='3'  value="{{num}}"/></view>
             <view class="on-off">
               <view class="switchAdv">
-               <text>发布广告</text><switch />
+               <text>发布广告</text>
+               <switch color="#009944" name="advert" checked="{{advert}}" bindchange='switchAdv'/>
               </view>
               <view class="switchSquare">
-               <text>分享到广场</text><switch />
+               <text>分享到广场</text>
+               <switch color="#009944" name="piazza" checked="{{piazza}}" bindchange='switchPz'/>
               </view>
             </view> 
             <view class='mb40'></view>
             <view class="btn-area">
-               <button form-type="submit">生成语音口令</button>
+               <button form-type="submit">{{btn}}</button>
             </view>
              <view class='ts2'>需支付￥{{serviceCharge}}服务费，优先使用余额￥{{balance}}</view>
           </form>

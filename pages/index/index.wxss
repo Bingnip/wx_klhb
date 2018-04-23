@@ -41,14 +41,20 @@
   padding-top: 24rpx;
   position: relative;
   border-radius: 10rpx;
-  box-shadow: 0 0 10rpx rgba(0, 0, 0, .1)
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, .1);
 }
 .userInfo{
   width: 200rpx;
   height: 192rpx;
-  border: 1px solid navy;
   margin: -116rpx auto 24rpx;
+  text-align: center;
   /* display: block; */
+}
+.userinfo-avatar {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin-top: 40rpx
 }
 .txt{
   display: flex;
