@@ -15,7 +15,36 @@ Page({
     imgsTP: [],  //平台广告
     mode: 0,    //模式控制参数，首页三种红包参数
     duration: 300, //切换效果时长
-    token:''  //token初始值空，每次获取新的token
+    token:'',  //token初始值空，每次获取新的token
+    textCN:'', //设置口令框
+    maxsum:'10000', //最大赏金额
+    maxnum: 100,  //最大个数
+    sum: '',   //赏金输入框内容
+    num: '',  //数量输入框内容
+  },
+
+  /*---------input框--------------*/
+  bindKLInput: function(e){   //口令框函数
+      var val = e.detail.value.trim(),
+          reg = /[\u4e00-\u9fa5]/g,  //判断是否纯汉字
+          result = val.match(reg);
+      if(result === null){
+        this.setData({
+           textCN:''
+        })
+      }else{
+        result = result.join("");
+        this.setData({
+          textCN: result
+        })
+      }
+  },
+  bindJEInput: function(e){   //金额输入框函数
+    var value = !e ? this.data.sum : e.detail.value;//判断值是否存在
+    var inp = Math.round(value * 100);
+    console.log(inp);
+
+
   },
 
   onShow: function() {   //获取登录信息
@@ -54,8 +83,6 @@ Page({
       var postUrl=app.setConfig.url + '/index.php?g=User&m=Consumer&a=userInfo',
       postData = { token : tok };
       app.postLogin(postUrl , postData , this.initial);
-   
-
     }
   },
 
@@ -76,8 +103,7 @@ Page({
           })
 
       }
-  },
-
+  }
 
 
 })

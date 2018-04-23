@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/squareHome/squareHome",
+    "pages/userCenter/userCenter",
     "pages/logs/logs"
   ],
   "window":{
@@ -21,13 +23,13 @@
         "text": "发红包"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/squareHome/squareHome",
         "iconPath": "images/square.png",
         "selectedIconPath": "images/square-on.png",
         "text": "广场"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/userCenter/userCenter",
         "text": "我的包",
         "iconPath": "images/me.png",
         "selectedIconPath": "images/me-on.png"

@@ -91,3 +91,26 @@
   background:#DE4C56;
   color: #fff;
 }
+.on-off{
+  margin: 10rpx 0;
+  font-size: 28rpx;
+}
+.switchAdv{
+  padding-left: 80rpx;
+  float: left;
+}
+.switchSquare{
+  padding-right: 80rpx;
+  float: right;
+}
+.mb40{
+  height: 50rpx; 
+  margin-bottom: 40rpx;
+  float: left;
+}
+.ts2{
+  text-align: center;
+  font-size: 26rpx;
+  color: #ccc;
+  margin: 20rpx 0 20rpx;
+}
